@@ -67,8 +67,8 @@ Adobe XD를 활용했습니다.
 ## 개발
 
 > 저희는 프론트와 백엔드를 다음과 같이 나눠서 개발을 진행했습니다. 저는 Frontend에서 Curation Board와 Custom Board의 전반을 담당하였습니다.
-
-![image-20210303211927268](images/team.png)
+>
+> https://github.com/wealways/INSSAFY1 다음의 repo에서 사전작업을 진행하였습니다.
 
 ### 백엔드
 
@@ -100,7 +100,7 @@ Vue.js를 기반으로 Api 서버와 통신하는 front를 만들었으며 서�
 
 ## Demo
 
-1. 회원가입
+### 1. 회원가입
 
 - form validation 적용
 
@@ -109,29 +109,31 @@ Vue.js를 기반으로 Api 서버와 통신하는 front를 만들었으며 서�
 
 ![](images/join.gif)
 
-2. Main 페이지
+### 2. Main 페이지
 
 - 즐겨찾기 board
 - 인기순 board
 
 ![main](images/main.gif)
 
-3. Mypage
+### 3. Mypage
 
 - 유저정보 변경
 - 활동내역 파악
 
 ![mypage](images/mypage.gif)
 
-4. Curation Board + Custom Board
+### 4. Curation Board + Custom Board
 
 > curation Board와 Custom Board의 구조가 비슷해서 재사용할 수 있게 component를 만들었습니다.
 
 각각의 Curation Board에 어울리는 기능이 추가되어있습니다.<br>또한, Custom Board만이 가지는 기능들이 다양하게 존재합니다. 
 
+### 전체 시연영상 (6분)
+
 너무 많은 내용을 담고 있기에 아래 영상을 통해 각 Board의 특징을 확인해주시면 감사하겠습니다 :)
 
-[![Video Label](http://img.youtube.com/vi/1iGoiBUbbGo/3.jpg)](https://youtu.be/https://youtu.be/1iGoiBUbbGo?t=104)
+[![Video Label](http://img.youtube.com/vi/1iGoiBUbbGo/3.jpg)](https://youtu.be/1iGoiBUbbGo)
 
 
 
