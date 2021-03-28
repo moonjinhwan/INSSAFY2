@@ -86,7 +86,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 import BoardItem from '@/components/popular/BoardItem.vue';
 import PostItem from '@/components/popular/PostItem.vue';
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 //toast nority
 
@@ -191,6 +191,7 @@ export default {
       'actCommentRank',
       'actNewBoards',
     ]),
+    ...mapMutations('search', ['SET_PAYLOAD_RESET', 'SET_PAYLOAD_ID', 'CLEAR_SEARCH_LIST']),
     forceRerender() {
       this.componentKey += 1;
     },
@@ -212,18 +213,53 @@ export default {
       this.$router.push(`board/${this.getFavorites[index].board_id}`);
     },
     clickCBtn1: function() {
+      this.CLEAR_SEARCH_LIST();
+      this.SET_PAYLOAD_RESET();
+      this.SET_PAYLOAD_ID({
+        type: 'title',
+        board_id: 120,
+        user_id: this.$store.state.auth.user.userId,
+      });
       this.$router.push({ name: 'StudyMain' });
     },
     clickCBtn2: function() {
+      this.CLEAR_SEARCH_LIST();
+      this.SET_PAYLOAD_RESET();
+      this.SET_PAYLOAD_ID({
+        type: 'title',
+        board_id: 121,
+        user_id: this.$store.state.auth.user.userId,
+      });
       this.$router.push({ name: 'LearnShare' });
     },
     clickCBtn3: function() {
+      this.CLEAR_SEARCH_LIST();
+      this.SET_PAYLOAD_RESET();
+      this.SET_PAYLOAD_ID({
+        type: 'title',
+        board_id: 123,
+        user_id: this.$store.state.auth.user.userId,
+      });
       this.$router.push({ name: 'Recruitment' });
     },
     clickCBtn4: function() {
+      this.CLEAR_SEARCH_LIST();
+      this.SET_PAYLOAD_RESET();
+      this.SET_PAYLOAD_ID({
+        type: 'title',
+        board_id: 122,
+        user_id: this.$store.state.auth.user.userId,
+      });
       this.$router.push({ name: 'Market' });
     },
     clickCBtn5: function() {
+      this.CLEAR_SEARCH_LIST();
+      this.SET_PAYLOAD_RESET();
+      this.SET_PAYLOAD_ID({
+        type: 'title',
+        board_id: 120,
+        user_id: this.$store.state.auth.user.userId,
+      });
       this.$router.push({ name: 'BambooForest' });
     },
     clickPBtn1: function() {

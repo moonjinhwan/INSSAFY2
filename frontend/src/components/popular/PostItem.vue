@@ -80,13 +80,33 @@ export default {
   },
   methods: {
     clickTitle0: function() {
-      this.$router.push(`/board/${this.items[0].board_id}/post/${this.items[0].post_id}`);
+      this.pushRouter(0);
     },
     clickTitle1: function() {
-      this.$router.push(`/board/${this.items[1].board_id}/post/${this.items[1].post_id}`);
+      this.pushRouter(1);
     },
     clickTitle2: function() {
-      this.$router.push(`/board/${this.items[2].board_id}/post/${this.items[2].post_id}`);
+      this.pushRouter(2);
+    },
+
+    pushRouter(index) {
+      switch (Number(this.items[index].board_id)) {
+        case 122:
+          this.$router.push(`/market/${this.items[index].post_id}`);
+          break;
+        case 121:
+          this.$router.push(`/learningshare/${this.items[index].post_id}`);
+          break;
+        case 120:
+          this.$router.push(`/study/main/${this.items[index].post_id}`);
+          break;
+        case 123:
+          this.$router.push(`/recruitment/${this.items[index].post_id}`);
+          break;
+        default:
+          this.$router.push(`/board/${this.items[index].board_id}/post/${this.items[index].post_id}`);
+          break;
+      }
     },
   },
 };
@@ -184,7 +204,11 @@ export default {
   height: 100%;
   background: var(#ffffff80); /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ffffff80 10%, #fff 50%); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ffffff80 10%, #fff 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    #ffffff80 10%,
+    #fff 50%
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .pi-p {
   margin-right: 20px;

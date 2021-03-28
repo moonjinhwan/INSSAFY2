@@ -126,6 +126,7 @@ export default {
     async actGetDeadline({ commit }) {
       try {
         const response = await calendarApi.getDeadline();
+        console.log(response);
         // console.log(response);
         if (response.data.message === 'SUCCESS') {
           const payload = getEventsTransfer(response.data.calendarList);

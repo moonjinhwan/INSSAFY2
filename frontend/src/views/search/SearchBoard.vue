@@ -58,8 +58,9 @@ export default {
   data() {
     return {};
   },
-  created() {
+  mounted() {
     this.payload.page = 0;
+    // this.$store.commit('search/CLEAR_SEARCH_LIST');
   },
   computed: {
     ...mapState('search', ['searchList', 'size', 'payload']),

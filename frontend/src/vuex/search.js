@@ -124,6 +124,9 @@ export default {
     //모든 보드 검색
     async actSearchAllBoard({ commit, state }) {
       try {
+        if (state.payload.page === 0) {
+          commit('CLEAR_SEARCH_LIST');
+        }
         const response = await searchApi.getSearchAllBoard(state.payload);
         if (response.data.message === 'success') {
           commit('SET_SEARCH_LIST', response.data.boardList);
@@ -144,6 +147,9 @@ export default {
     //모든 포스트 검색
     async actSearchAllPost({ commit, state }) {
       try {
+        if (state.payload.page === 0) {
+          commit('CLEAR_SEARCH_LIST');
+        }
         const response = await searchApi.getSearchAllPost(state.payload);
         if (response.data.message === 'success') {
           commit('SET_SEARCH_LIST', response.data.postList);
@@ -162,6 +168,9 @@ export default {
     //보드 내에서 포스트 검색
     async actSearchPost({ commit, state }) {
       try {
+        if (state.payload.page === 0) {
+          commit('CLEAR_SEARCH_LIST');
+        }
         const response = await searchApi.getSearchPost(state.payload);
         // console.log(response);
         if (response.data.message === 'success') {

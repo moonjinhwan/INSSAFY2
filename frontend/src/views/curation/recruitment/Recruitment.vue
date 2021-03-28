@@ -43,7 +43,7 @@
 <script>
 // 스터디 홍보글 게시물
 // import Post from '@/components/board/Post.vue';
-import DueDateItem from '@/views/curation/recruitment/DueDateItem.vue';
+import DueDateItem from '@/views/curation/recruitment/DueDateItem';
 import CalendarSpan from '@/components/calendar/CalendarSpan';
 
 // 중고장터 리스트

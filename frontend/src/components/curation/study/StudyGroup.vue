@@ -65,7 +65,7 @@
 
 <script>
 import GradientGenerator from '@/components/etc/GradientGenerator';
-
+import { mapMutations } from 'vuex';
 export default {
   name: 'StudyGroup',
   data() {
@@ -85,7 +85,15 @@ export default {
     },
   },
   methods: {
+    ...mapMutations('search', ['SET_PAYLOAD_RESET', 'SET_PAYLOAD_ID', 'CLEAR_SEARCH_LIST']),
     goThisStudy() {
+      this.CLEAR_SEARCH_LIST();
+      this.SET_PAYLOAD_RESET();
+      this.SET_PAYLOAD_ID({
+        type: 'title',
+        board_id: this.group.board_id,
+        user_id: this.$store.state.auth.user.userId,
+      });
       this.$router.push({
         name: 'Study',
         params: {

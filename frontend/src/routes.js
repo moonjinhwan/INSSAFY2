@@ -35,7 +35,6 @@ import JoinSuccess from './views/redirect/JoinSuccess';
 
 import Modify from './views/user/Modify';
 
-
 //토큰 없이(비회원) About 외 페이지 접근 시 리다이렉트
 // https://router.vuejs.org/kr/guide/advanced/navigation-guards.html
 import store from './vuex/store';
@@ -58,6 +57,28 @@ const redirectBefore = () => (to, from, next) => {
   }
 };
 
+const requireCuration = () => (to, from, next) => {
+  const nextRoute = to.path;
+  let boardId = nextRoute.substring(1);
+  boardId = boardId.slice(boardId.indexOf('/') + 1);
+  console.log(boardId);
+
+  let go;
+  if (boardId == 121) {
+    //학습공유
+    go = '/learningshare';
+  } else if (boardId == 122) {
+    //중고
+    go = '/market';
+  } else if (boardId == 123) {
+    //채용일정
+    go = '/recruitment';
+  } else if (boardId == 120) {
+    //스터디
+    go = '/study/main';
+  }
+  next(go);
+};
 export default [
   //intro 영역
   {
@@ -209,7 +230,7 @@ export default [
 
   //redirect 영역
   {
-    path: '*',
+    path: '/dd',
     redirect: '/404',
   },
   {
