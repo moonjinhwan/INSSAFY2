@@ -66,7 +66,17 @@ Adobe XD를 활용했습니다.
 
 ## 개발
 
-> 저희는 프론트와 백엔드를 다음과 같이 나눠서 개발을 진행했습니다. 저는 Frontend에서 Curation Board와 Custom Board의 전반을 담당하였습니다.
+> 저희는 프론트와 백엔드를 다음과 같이 나눠서 개발을 진행했습니다. 
+>
+> 맡은 역할
+> - TOP3 게시판, 게시물, 댓글 등의 랭킹 출력 시스템
+> - 회원가입, 로그인 등 사용자 관련CRUD 기능 구현
+> - socket 통신 활용, 1:1 채팅 기능(STOMP 프로토콜 사용)
+>
+> 성과
+> - 랭킹구현에서 Redis와 Java스케줄러를 활용하여 서버의 부담 감소
+> - socket 통신의 이해
+> - 시퀀스다이어그램을 통해 프로그램 설계능력 향상
 >
 > https://github.com/wealways/INSSAFY1 다음의 repo에서 사전작업을 진행하였습니다.
 
@@ -112,7 +122,7 @@ Vue.js를 기반으로 Api 서버와 통신하는 front를 만들었으며 서�
 ### 2. Main 페이지
 
 - 즐겨찾기 board
-- 인기순 board
+- TOP3 랭킹 board (구독, 좋아요,  게시글수, 댓글 수 기준)
 
 ![main](images/main.gif)
 
